@@ -9,6 +9,9 @@ import MyOrder from '../MyOrder';
 import NotFound from '../NotFound';
 import SignIn from '../SignIn';
 
+//Componentes
+import Navbar from '../../Components/Navbar';
+
 //Estilos
 import './App.css';
 
@@ -48,6 +51,7 @@ const App = () => {
    return (
       <BrowserRouter>
          <AppRoutes />
+         <Navbar />
       </BrowserRouter>
    );
 };
