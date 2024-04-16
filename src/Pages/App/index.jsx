@@ -9,6 +9,9 @@ import MyOrder from '../MyOrder';
 import NotFound from '../NotFound';
 import SignIn from '../SignIn';
 
+//Contexto
+import { ShoppingCartProvider } from '../../Context';
+
 //Componentes
 import Navbar from '../../Components/Navbar';
 
@@ -49,10 +52,12 @@ const AppRoutes = () => {
 
 const App = () => {
    return (
-      <BrowserRouter>
-         <AppRoutes />
-         <Navbar />
-      </BrowserRouter>
+      <ShoppingCartProvider>
+         <BrowserRouter>
+            <AppRoutes />
+            <Navbar />
+         </BrowserRouter>
+      </ShoppingCartProvider>
    );
 };
 
