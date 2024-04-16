@@ -12,7 +12,6 @@ const Home = () => {
          .then((response) => response.json())
          .then((data) => {
             setItems(data);
-            console.log(data);
          });
    }, []);
 

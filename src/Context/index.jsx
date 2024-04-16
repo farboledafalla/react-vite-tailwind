@@ -1,14 +1,23 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const ShoppingCartContext = createContext();
+export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
+   const [count, setCount] = useState(0);
+
    return (
-      <ShoppingCartContext.Provider>{children}</ShoppingCartContext.Provider>
+      <ShoppingCartContext.Provider
+         value={{
+            count,
+            setCount,
+         }}
+      >
+         {children}
+      </ShoppingCartContext.Provider>
    );
 };
 
 ShoppingCartProvider.propTypes = {
-   children: PropTypes.func,
+   children: PropTypes.object,
 };
