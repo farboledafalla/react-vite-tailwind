@@ -14,6 +14,7 @@ import { ShoppingCartProvider } from '../../Context';
 
 //Componentes
 import Navbar from '../../Components/Navbar';
+import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu';
 
 //Estilos
 import './App.css';
@@ -56,6 +57,7 @@ const App = () => {
          <BrowserRouter>
             <AppRoutes />
             <Navbar />
+            <CheckoutSideMenu />
          </BrowserRouter>
       </ShoppingCartProvider>
    );
