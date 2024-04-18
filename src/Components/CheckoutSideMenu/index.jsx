@@ -1,5 +1,8 @@
 import { useContext } from 'react';
 
+// Componentes
+import { OrderCard } from '../../Components/OrderCard';
+
 // Contexto
 import { ShoppingCartContext } from '../../Context';
 
@@ -10,6 +13,7 @@ import './styles.css';
 
 export const CheckoutSideMenu = () => {
    const context = useContext(ShoppingCartContext);
+   console.log('CART: ', context.cartProducts);
 
    return (
       <aside
@@ -25,6 +29,16 @@ export const CheckoutSideMenu = () => {
                   onClick={() => context.closeCheckoutSideMenu()}
                />
             </div>
+         </div>
+         <div className='px-6'>
+            {context.cartProducts.map((product) => (
+               <OrderCard
+                  key={product.id}
+                  title={product.title}
+                  imageUrl={product.images}
+                  price={product.price}
+               />
+            ))}
          </div>
       </aside>
    );
