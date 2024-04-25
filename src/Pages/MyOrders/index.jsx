@@ -6,21 +6,21 @@ import { ShoppingCartContext } from '../../Context';
 
 function MyOrders() {
    const context = useContext(ShoppingCartContext);
+   console.log(context.order);
 
    return (
       <Layout>
          <div className='flex w-80 items-center relative justify-center'>
             <h1>My Orders</h1>
          </div>
-         {context.order.map((order, index) => {
-            <Link key={index} to={`/my-orders/${order.id}`}>
+         {context.order.map((order, index) => (
+            <Link key={index} to={`/my-orders/${index}`}>
                <OrdersCard
                   totalPrice={order.totalPrice}
                   totalProducts={order.totalProducts}
                />
-               ;
-            </Link>;
-         })}
+            </Link>
+         ))}
       </Layout>
    );
 }
