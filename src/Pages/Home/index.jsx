@@ -17,9 +17,9 @@ const Home = () => {
          context.filteredItems?.map((item) => (
             <Card key={item.id} data={item} />
          ))
-      ) : (
-         <div>We dont have anything to show</div>
-      );
+         ) : (
+            <div>We dont have anything to show</div>
+         )
    };
 
    return (
