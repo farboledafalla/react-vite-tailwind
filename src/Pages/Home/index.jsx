@@ -10,17 +10,15 @@ import { ShoppingCartContext } from '../../Context';
 const Home = () => {
    const context = useContext(ShoppingCartContext);
 
+   // Limpiar caja de texto
+
    const renderView = () => {
-      return context.searchByTitle?.length > 0 ? (
-         context.filteredItems?.length > 0 ? (
-            context.filteredItems?.map((item) => (
-               <Card key={item.id} data={item} />
-            ))
-         ) : (
-            <div>We dont have anything to show</div>
-         )
+      return context.filteredItems?.length > 0 ? (
+         context.filteredItems?.map((item) => (
+            <Card key={item.id} data={item} />
+         ))
       ) : (
-         context.items?.map((item) => <Card key={item.id} data={item} />)
+         <div>We dont have anything to show</div>
       );
    };
 
@@ -33,6 +31,7 @@ const Home = () => {
             className='rounded-lg border border-black w-80 px-4 py-3 mb-4 focus:outline-none'
             type='text'
             placeholder='Search a product'
+            value={context.searchByTitle}
             onChange={(event) => context.setSearchByTitle(event.target.value)}
          />
          <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
