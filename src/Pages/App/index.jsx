@@ -5,7 +5,7 @@ import { useRoutes, BrowserRouter, Navigate } from 'react-router-dom';
 
 //Páginas
 import Home from '../Home';
-import MyAccount from '../MyAccount';
+import { MyAccount } from '../MyAccount';
 import MyOrders from '../MyOrders';
 import MyOrder from '../MyOrder';
 import NotFound from '../NotFound';
